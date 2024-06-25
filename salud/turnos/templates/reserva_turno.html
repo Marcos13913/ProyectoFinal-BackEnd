@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva de Turno</title>
+    <!-- Importa los estilos del widget de fecha -->
+    {{ form.media }}
+</head>
+<body>
+    <h1>Reserva de Turno</h1>
+
+    <!-- Mostrar errores de validación -->
+    {% if form.errors %}
+        <p>Por favor corrige los errores a continuación:</p>
+        <ul>
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- Formulario de reserva de turno -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Reservar turno</button>
+    </form>
+
+    <!-- Enlaces de navegación -->
+    <ul>
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'lista_pacientes' %}">Lista de Pacientes</a></li>
+        <li><a href="{% url 'lista_medicos' %}">Lista de Médicos</a></li>
+    </ul>
+</body>
+</html>
+
+
+

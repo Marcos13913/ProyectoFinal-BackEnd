@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pacientes',
     'usuarios',
+    'turnos',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +58,11 @@ ROOT_URLCONF = 'salud.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'pacientes', 'templates'),  # Para pacientes
+            os.path.join(BASE_DIR, 'turnos', 'templates'),     # Para turnos
+            os.path.join(BASE_DIR, 'usuarios', 'templates'),   # Para usuarios
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,11 +75,14 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'salud.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
+DEFAULT_CHARSET = 'utf-8'
 
 DATABASES = {
     'default': {
@@ -81,7 +90,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -121,9 +129,11 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = 'staticfiles'
 
+
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, "static"),
 ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

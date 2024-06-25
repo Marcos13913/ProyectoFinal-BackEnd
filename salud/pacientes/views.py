@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Paciente, Medico, Especialidad
 
 def inicio(request):
@@ -13,4 +13,4 @@ def lista_medicos(request):
 
 def lista_especialidades(request):
     especialidades = Especialidad.objects.all()
-    return render(request, 'pacientes/lista_especialidades.html', {'especialidades': especialidades})
+    return render(request, 'turnos/lista_especialidades.html', {'especialidades': especialidades})

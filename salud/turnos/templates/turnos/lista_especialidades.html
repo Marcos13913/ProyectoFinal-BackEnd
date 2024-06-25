@@ -1,0 +1,26 @@
+<!-- turnos/templates/turnos/lista_especialidades.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Especialidades</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Lista de Especialidades</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'lista_pacientes' %}">Lista de Pacientes</a></li>
+            <li><a href="{% url 'lista_medicos' %}">Lista de Médicos</a></li>
+        </ul>
+    </nav>
+    <ul>
+        {% for especialidad in especialidades %}
+            <li><a href="{% url 'reserva_turno' especialidad.id %}">{{ especialidad.nombre }}</a></li>
+        {% endfor %}
+    </ul>    
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
