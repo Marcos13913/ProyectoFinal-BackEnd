@@ -1,0 +1,34 @@
+# institucion-medica
+Proyecto perteneciente al Servicio Geológico Colombiano. 
+
+## DESCRIPCIÓN
+
+Una institución medica requiere dar seguimiento a sus pacientes, los procedimientos que se les han practicado.
+ Para tal fin, se solicita implementar los siguientes módulos:
+
+Pacientes. Desde el cual se podrá registrar información básica del paciente:
+Nombres, apellidos, tipo y numero de documento de identificación, dirección ,correo electrónico, celular y persona de contacto con su respectivo numero celular.
+Adicionalmente, se podrá listar, consultar, modificar o eliminar un registro de paciente.
+
+Médicos.  Desde el cual se podrá registrar información básica del profesional: Nombres, apellidos, tipo y numero de documento de identificación, especialidad, correo electrónico, celular. Adicionalmente, se podrá listar, consultar, modificar o eliminar un registro de medico.
+
+Consulta.  Desde el cual se podrá registrar información básica de la consulta: fecha de la consulta, paciente, medico, medicamento, observaciones. Adicionalmente, se podrá listar, consultar, modificar o eliminar un registro de consulta. Estas consultas se deben registrar desde el modulo de médicos.
+
+Procedimiento.  Desde el cual se podrá registrar información básica del procedimiento a realizar: fecha a realizar, paciente, medico.  Adicionalmente, se podrá listar, consultar, modificar o eliminar un registro de procedimiento. Los procedimientos se deben registrar desde el modulo de médicos.
+
+Medicamentos.  Desde el cual se podrá registrar información básica del medicamento a asignar: Nombre del medicamento, cantidad, formula (Descripción de como se debe tomar o aplicar el medicamento), fecha de receta. Adicionalmente, se podrá listar, consultar, modificar o eliminar un registro de medicamentos. Los medicamentos se deben registrar desde el modulo de médicos.
+
+Historial. Desde aquí se podrá consultar las citas, medicamentos y procedimientos realizados a un paciente. Para realizar la consulta se debe ingresar el numero de documento del paciente. Debe distinguirse claramente de manera visual las consultas, medicamentos y procedimientos.
+
+Características del Proyecto
+Inicio de Sesión y Registro: Funcionalidad de autenticación segura para usuarios, incluyendo opciones para inicio de sesión y registro de nuevos usuarios.
+Gestión de Pacientes: Permite agregar, visualizar, editar y eliminar información de pacientes.
+Gestión de Médicos: Facilita la administración de datos de médicos, incluyendo sus especialidades.
+Gestión de Especialidades: Organización y manejo de diferentes especialidades médicas disponibles en el centro de salud.
+Interfaz de Usuario Amigable: Diseño intuitivo y fácil de usar, con navegación clara y eficiente.
+Seguridad: Implementación de medidas de seguridad para proteger la información sensible de los pacientes y usuarios.
+Tecnologías Utilizadas
+Backend: Django, un framework web de alto nivel en Python que fomenta el desarrollo rápido y el diseño limpio y pragmático.
+Base de Datos: PostgreSQL, una base de datos relacional robusta y escalable.
+Frontend: HTML, CSS, JavaScript para una interfaz de usuario interactiva y responsiva.
+Autenticación: Implementación de autenticación segura con manejo de sesiones y tokens CSRF.

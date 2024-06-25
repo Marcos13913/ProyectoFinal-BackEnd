@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Salud</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <style>
+        /* Estilos específicos para esta página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('{% static 'images/healthcare-background.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff; /* Color blanco para los enlaces */
+            text-decoration: none; /* Quitar subrayado */
+        }
+
+        .logout-link {
+            margin-left: auto;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        section h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido al Centro de Salud Digital</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'inicio_sesion' %}">Inicio de Sesión</a></li>
+            <li><a href="{% url 'registro' %}">Registro</a></li>
+        </ul>
+        {% if user.is_authenticated %}
+            <div class="logout-link">
+                <a href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a>
+            </div>
+        {% endif %}
+    </nav>
+
+    <main>
+        <section>
+            <h2>Listas</h2>
+            <ul>
+                <li><a href="{% url 'lista_pacientes' %}">Lista de Pacientes</a></li>
+                <li><a href="{% url 'lista_medicos' %}">Lista de Médicos</a></li>
+                <li><a href="{% url 'lista_especialidades' %}">Lista de Especialidades</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

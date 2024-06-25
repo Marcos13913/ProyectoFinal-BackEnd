@@ -1,0 +1,45 @@
+/* pacientes/static/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+
+    background-image: url('file:///C:/Users/anali/Downloads/c:\Users\anali\Downloads\corazon.jpeg');
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+    color: rojo; /* Cambia el color del texto para que sea legible sobre la imagen */
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    color: #343a40;
+}
+
+p {
+    color: #6c757d;
+}
+
+ul {
+    color: #495057;
+}
